@@ -1,6 +1,33 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.jfrog.bintray'                           // Apply Bintray Plugin
+apply plugin: 'com.github.dcendents.android-maven'          // Apply Maven Plugin
+
+ext {
+    bintrayRepo = "SongDataProvider"                        // The repository name in Bintray dashboard
+    bintrayName = "com.ericchee.songdataprovider"           // The package name of the Bintray repository
+
+    libraryName = 'songdataprovider'                        // The module name in your Android Studio project
+
+
+    // Artifactory information
+    // For example, "com.ericchee:songdataprovider:1.0.0"
+
+    publishedGroupId = "com.ericchee"                       // The ID you want to add in 'implementation' line
+    artifact = 'songdataprovider'                           // The artifact you want to add in 'implementation' line
+    libraryVersion = '1.0.0'
+
+    libraryDescription = 'Provides a class song & provider to get list and create songs'
+    siteUrl = 'https://github.com/echeeUW/SongDataProvider'
+    gitUrl = 'https://github.com/echeeUW/SongDataProvider.git'
+    developerId = 'ericchee'
+    developerName = 'Eric Chee'
+    developerEmail = 'bboyairwreck@gmail.com'
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
 
 android {
     compileSdkVersion 29
@@ -33,4 +60,16 @@ dependencies {
     testImplementation 'junit:junit:4.13'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+
+//Add these lines to publish library to bintray. This is the ready-made scripts to make uploading to bintray easy.
+//Place it at the end of the file
+if (project.rootProject.file('local.properties').exists()) {
+    apply from: 'https://raw.githubusercontent.com/wajahatkarim3/JCenter-Gradle-Scripts/master/install.gradle'
+    apply from: 'https://raw.githubusercontent.com/wajahatkarim3/JCenter-Gradle-Scripts/master/bintray.gradle'
 }
