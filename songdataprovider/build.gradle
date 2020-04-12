@@ -16,7 +16,7 @@ ext {
 
     publishedGroupId = "com.ericchee"                       // The ID you want to add in 'implementation' line
     artifact = 'songdataprovider'                           // The artifact you want to add in 'implementation' line
-    libraryVersion = '1.0.1'
+    libraryVersion = '1.0.2'
 
     libraryDescription = 'Provides a class song & provider to get list and create songs'
     siteUrl = 'https://github.com/echeeUW/SongDataProvider'
