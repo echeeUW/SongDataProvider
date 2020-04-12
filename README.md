@@ -7,7 +7,7 @@ To use this library, add this implementation line to your build.gradle (app) dep
 ```
 dependencies {
     ...
-    implementation 'com.ericchee:songdataprovider:1.0.0'
+    implementation 'com.ericchee:songdataprovider:1.0.2'
 }
 ```
 
@@ -20,11 +20,15 @@ data class Song(
     val id: String,
     val title: String,
     val artist: String,
-    val durationMillis: Long
+    val durationMillis: Long,
+    val smallImageID: Int,
+    val largeImageID: Int
 ): Parcelable
 ```
 
-_Note: this `Song` is Parcelable meaning it can be passed through Intents_
+`smallImageID` and `largeImageID` are drawable resource ID's. Use ImageView.setImageResource() to set drawable as imageView's source.
+
+_Note: This class `Song` is Parcelable meaning it can be passed through Intents_
 
 
 ### SongDataProvider.getAllSongs()
@@ -34,6 +38,13 @@ val allSongs: List<Song> = SongDataProvider.getAllSongs()
 
 val firstSong: Song = allSongs[1]
 val artistName: String = firstSong.artist
+```
+
+### SongDataProvider.createRandomSong()
+The method `createRandomSong()` can be used to create a quick song with generic song info.
+
+```
+val randomSong: Song = SongDataProvider.createRandomSong()
 ```
 
 ### SongDataProvider.createSong()
