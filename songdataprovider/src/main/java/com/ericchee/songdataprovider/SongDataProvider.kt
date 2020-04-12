@@ -7,7 +7,7 @@ class SongDataProvider {
         fun getAllSongs(): List<Song> = mutableListOf<Song>().apply {
             add(
                 createSong(
-                    "In the End",
+                    "In The End",
                     "Linkin Park"
                 )
             )
@@ -79,56 +79,56 @@ class SongDataProvider {
             )
             add(
                 createSong(
-                    "In the End",
-                    "Linkin Park"
+                    "Somebody You LoveD",
+                    "Lewis Capaldi"
                 )
             )
             add(
                 createSong(
-                    "In the End",
-                    "Linkin Park"
+                    "Lucky You",
+                    "Eminem feat. Joyner Lucas"
                 )
             )
             add(
                 createSong(
-                    "In the End",
-                    "Linkin Park"
+                    "Crazy In Love",
+                    "Beyonce feat. Jay-Z"
                 )
             )
             add(
                 createSong(
-                    "In the End",
-                    "Linkin Park"
+                    "In The Name Of Love",
+                    "Martin Garrix feat. Bebe Rexha"
                 )
             )
             add(
                 createSong(
-                    "In the End",
-                    "Linkin Park"
+                    "Don't Start Now",
+                    "Dua Lipa"
                 )
             )
             add(
                 createSong(
-                    "In the End",
-                    "Linkin Park"
+                    "Rewrite The Stars",
+                    "Zac Efron & Zendaya"
                 )
             )
             add(
                 createSong(
-                    "In the End",
-                    "Linkin Park"
+                    "I'm On A Boat",
+                    "The Lonely Island"
                 )
             )
             add(
                 createSong(
-                    "In the End",
-                    "Linkin Park"
+                    "Despacito (Remix)",
+                    "Luis Fonsi feat. Daddy Yankee & Justin Bieber"
                 )
             )
             add(
                 createSong(
-                    "In the End",
-                    "Linkin Park"
+                    "Like A G6",
+                    "Far East Movement feat. The Cataracs & DEV"
                 )
             )
         }
