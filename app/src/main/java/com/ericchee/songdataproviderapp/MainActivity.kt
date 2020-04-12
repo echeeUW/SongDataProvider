@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -17,5 +18,9 @@ class MainActivity : AppCompatActivity() {
         val artistName: String = firstSong.artist
 
         val thrillerSong: Song = SongDataProvider.createSong("Thriller", "Michael Jackson")
+
+        allSongs.find { it.title.contains("G6") }?.let {
+            ivArt.setImageResource(it.largeImageID)
+        }
     }
 }
