@@ -106,7 +106,7 @@ class SongDataProvider {
                     "Someone You Loved",
                     "Lewis Capaldi",
                     smallImageID = R.drawable.someoneyouloved_small,
-                    largeImageID = R.drawable.someoneyouloved_small
+                    largeImageID = R.drawable.someoneyouloved
                 )
             )
             add(
@@ -144,7 +144,7 @@ class SongDataProvider {
             add(
                 createSong(
                     "I'm On A Boat",
-                    "The Lonely Island",
+                    "The Lonely Island feat. T-Pain",
                     smallImageID = R.drawable.imonaboat_small,
                     largeImageID = R.drawable.imonaboat
                 )
