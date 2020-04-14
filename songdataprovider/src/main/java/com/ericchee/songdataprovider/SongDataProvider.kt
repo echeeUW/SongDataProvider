@@ -367,6 +367,22 @@ class SongDataProvider {
                     largeImageID = R.drawable.unknown_color_5
                 )
             )
+            add(
+                createSong(
+                    "Cadillactica",
+                    "BIG K.R.I.T.",
+                    smallImageID = R.drawable.unknown_color_1,
+                    largeImageID = R.drawable.unknown_color_1
+                )
+            )
+            add(
+                createSong(
+                    "God's Plan",
+                    "Drake",
+                    smallImageID = R.drawable.unknown_color_2,
+                    largeImageID = R.drawable.unknown_color_2
+                )
+            )
 
             // endregion Student songs
         }
