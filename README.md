@@ -7,7 +7,7 @@ To use this library, add this implementation line to your build.gradle (app) dep
 ```
 dependencies {
     ...
-    implementation 'com.ericchee:songdataprovider:1.0.2'
+    implementation 'com.ericchee:songdataprovider:1.0.5'
 }
 ```
 
