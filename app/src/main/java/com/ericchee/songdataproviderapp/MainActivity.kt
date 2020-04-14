@@ -19,8 +19,8 @@ class MainActivity : AppCompatActivity() {
 
         val thrillerSong: Song = SongDataProvider.createSong("Thriller", "Michael Jackson")
 
-        allSongs.find { it.title.contains("G6") }?.let {
-            ivArt.setImageResource(it.largeImageID)
+        allSongs.find { it.title.contains("Warriors") }?.let {
+            ivArt.setImageResource(it.smallImageID)
         }
     }
 }
