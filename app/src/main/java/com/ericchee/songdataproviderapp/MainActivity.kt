@@ -2,8 +2,10 @@ package com.ericchee.songdataproviderapp
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
+import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,5 +24,12 @@ class MainActivity : AppCompatActivity() {
         allSongs.find { it.title.contains("Warriors") }?.let {
             ivArt.setImageResource(it.smallImageID)
         }
+
+        val gson = Gson().newBuilder()
+            .setPrettyPrinting()
+            .create()
+        val allSongsJson = gson.toJson(allSongs)
+
+        Log.i("echee", allSongsJson)
     }
 }

@@ -9,6 +9,10 @@
 /.idea/assetWizardSettings.xml
 /.idea/markdown-navigator-enh.xml
 /.idea/markdown-navigator.xml
+.idea/.name
+.idea/compiler.xml
+.idea/dictionaries/eric_chee.xml
+.idea/jarRepositories.xml
 .DS_Store
 /build
 /captures
