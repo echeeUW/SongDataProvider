@@ -15,7 +15,7 @@ class SongDataProvider {
             )
             add(
                 createSong(
-                    "Mask Definitely On",
+                    "Mask On & Social Distance",
                     "Future",
                     smallImageID = R.drawable.maskoff_small,
                     largeImageID = R.drawable.maskoff

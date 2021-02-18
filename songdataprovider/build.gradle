@@ -1,43 +1,26 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'com.jfrog.bintray'                           // Apply Bintray Plugin
-apply plugin: 'com.github.dcendents.android-maven'          // Apply Maven Plugin
+apply plugin: 'kotlin-parcelize'
 
 ext {
-    bintrayRepo = "SongDataProvider"                        // The repository name in Bintray dashboard
-    bintrayName = "com.ericchee.songdataprovider"           // The package name of the Bintray repository
-
-    libraryName = 'songdataprovider'                        // The module name in your Android Studio project
-
-
     // Artifactory information
     // For example, "com.ericchee:songdataprovider:1.0.0"
-
-    publishedGroupId = "com.ericchee"                       // The ID you want to add in 'implementation' line
-    artifact = 'songdataprovider'                           // The artifact you want to add in 'implementation' line
-    libraryVersion = '1.0.5'
-
-    libraryDescription = 'Provides a class song & provider to get list and create songs'
-    siteUrl = 'https://github.com/echeeUW/SongDataProvider'
-    gitUrl = 'https://github.com/echeeUW/SongDataProvider.git'
-    developerId = 'ericchee'
-    developerName = 'Eric Chee'
-    developerEmail = 'bboyairwreck@gmail.com'
-    licenseName = 'The Apache Software License, Version 2.0'
-    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
-    allLicenses = ["Apache-2.0"]
+    PUBLISH_GROUP_ID = 'com.ericchee'
+    PUBLISH_VERSION = '1.0.7'
+    PUBLISH_ARTIFACT_ID = 'songdataprovider'
 }
 
+apply from: "${rootProject.projectDir}/scripts/publish-mavencentral.gradle"
+
 android {
-    compileSdkVersion 29
+    compileSdkVersion 30
     buildToolsVersion "29.0.3"
 
     defaultConfig {
         minSdkVersion 23
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode 1
-        versionName "1.0"
+        versionName PUBLISH_VERSION
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles 'consumer-rules.pro'
@@ -49,7 +32,6 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
@@ -57,16 +39,4 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.core:core-ktx:1.3.2'
-}
-
-repositories {
-    mavenCentral()
-}
-
-
-//Add these lines to publish library to bintray. This is the ready-made scripts to make uploading to bintray easy.
-//Place it at the end of the file
-if (project.rootProject.file('local.properties').exists()) {
-    apply from: 'https://raw.githubusercontent.com/wajahatkarim3/JCenter-Gradle-Scripts/master/install.gradle'
-    apply from: 'https://raw.githubusercontent.com/wajahatkarim3/JCenter-Gradle-Scripts/master/bintray.gradle'
 }

@@ -5,14 +5,17 @@ import android.os.Bundle
 import android.util.Log
 import com.ericchee.songdataprovider.Song
 import com.ericchee.songdataprovider.SongDataProvider
+import com.ericchee.songdataproviderapp.databinding.ActivityMainBinding
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater).apply { setContentView(root) }
 
         val allSongs: List<Song> = SongDataProvider.getAllSongs()
 
@@ -21,8 +24,8 @@ class MainActivity : AppCompatActivity() {
 
         val thrillerSong: Song = SongDataProvider.createSong("Thriller", "Michael Jackson")
 
-        allSongs.find { it.title.contains("Warriors") }?.let {
-            ivArt.setImageResource(it.smallImageID)
+        allSongs.find { it.title.contains("Mask") }?.let {
+            binding.ivArt.setImageResource(it.smallImageID)
         }
 
         val gson = Gson().newBuilder()
