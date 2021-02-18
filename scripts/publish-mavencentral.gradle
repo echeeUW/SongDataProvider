@@ -3,6 +3,10 @@ apply plugin: 'signing'
 
 /**
  * Source from https://getstream.io/blog/publishing-libraries-to-mavencentral-2021/
+ * 1) Update Version in :module/build.gradle
+ * 2) execute ./gradlew songdataprovider:publishReleasePublicationToSonatypeRepository
+ * 3) Go to https://oss.sonatype.org/#stagingRepositories > Log in > Staging Repos > Close > Release
+ * 4) Check https://repo1.maven.org/maven2/com/ericchee/songdataprovider/
  */
 
 task androidSourcesJar(type: Jar) {
